@@ -357,7 +357,8 @@
                   "class": "pl-productImage-clone",
                   "isEnabled": true,
                   "zb-other-angle": true,
-                  "data-id": "pl-productImage-clone"
+                  "data-id": "pl-productImage-clone",
+                  "is-clone": true
                 }
               },
               {
@@ -1267,7 +1268,8 @@
                   "class": "pl-productImage-clone",
                   "isEnabled": true,
                   "zb-other-angle": true,
-                  "data-id": "pl-productImage-clone"
+                  "data-id": "pl-productImage-clone",
+                  "is-clone": true
                 }
               },
               {
