@@ -577,6 +577,7 @@
                   "tag": "div",
                   "condition": "${!isDigitalProduct}",
                   "attributes": {
+                    "type": "icon",
                     "class": "material-symbols-outlined fill",
                     "data-id": "productQuickView",
                     "isEnabled": false,
@@ -1335,6 +1336,7 @@
                 "tag": "div",
                 "condition": "${!isDigitalProduct}",
                 "attributes": {
+                  "type": "icon",
                   "class": "material-symbols-outlined fill",
                   "data-id": "productQuickView",
                   "isEnabled": false,

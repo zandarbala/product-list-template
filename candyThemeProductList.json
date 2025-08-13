@@ -660,7 +660,7 @@
                 },
                 "attributes": {
                   "class": "material-symbols-outlined fill candy-cartButton",
-                  "type": "text",
+                  "type": "icon",
                   "data-id": "productCartButton",
                   "productIndex": "${index}",
                   "action": "navigateTo",
@@ -692,7 +692,7 @@
                 },
                 "attributes": {
                   "class": "material-symbols-outlined fill candy-cartButton",
-                  "type": "textWithIcon",
+                  "type": "icon",
                   "data-id": "digitalProduct",
                   "productIndex": "${index}",
                   "action": "navigateTo",
@@ -1504,7 +1504,7 @@
                 },
                 "attributes": {
                   "class": "zwe-pl-add-to-cart-btn material-symbols-outlined fill candy-cartButton",
-                  "type": "text",
+                  "type": "icon",
                   "data-id": "productCartButton",
                   "productIndex": "${index}",
                   "action": "navigateTo",
@@ -1537,7 +1537,7 @@
                 },
                 "attributes": {
                   "class": "material-symbols-outlined fill candy-cartButton",
-                  "type": "textWithIcon",
+                  "type": "icon",
                   "data-id": "digitalProduct",
                   "productIndex": "${index}",
                   "action": "navigateTo",

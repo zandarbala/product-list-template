@@ -678,7 +678,7 @@
                     "attributes": {
                       "data-id": "opaline-tiles-video-control-section",
                       "class": "material-symbols-outlined fill add-to-cart-icon",
-                      "type": "text"
+                      "type": "icon"
                     },
                     "style": {
                       "fontSize": "13px",
@@ -740,7 +740,7 @@
                     "attributes": {
                       "data-id": "opaline-tiles-video-control-section",
                       "class": "material-symbols-outlined fill add-to-cart-icon",
-                      "type": "text"
+                      "type": "icon"
                     },
                     "style": {
                       "fontSize": "15px",
@@ -1588,7 +1588,7 @@
                     "attributes": {
                       "data-id": "opaline-tiles-video-control-section",
                       "class": "material-symbols-outlined fill add-to-cart-icon",
-                      "type": "text"
+                      "type": "icon"
                     },
                     "style": {
                       "fontSize": "15px",
@@ -1650,7 +1650,7 @@
                     "attributes": {
                       "data-id": "opaline-tiles-video-control-section",
                       "class": "material-symbols-outlined fill add-to-cart-icon",
-                      "type": "text"
+                      "type": "icon"
                     },
                     "style": {
                       "fontSize": "15px",
