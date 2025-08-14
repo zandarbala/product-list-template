@@ -795,7 +795,7 @@
       "tag": "div",
       "style": {
         "gap": "10px",
-        "width":"100%",
+        "width": "100%",
         "height": "150vh",
         "display": "flex",
         "position": "relative",
