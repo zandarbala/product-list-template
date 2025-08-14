@@ -698,7 +698,7 @@
                       "color": "inherit"
                     },
                     "attributes": {
-                      "type": "icon"
+                      "type": "text"
                     },
                     "textContent": "ADD TO CART"
                   }
@@ -760,7 +760,7 @@
                       "color": "inherit"
                     },
                     "attributes": {
-                      "type": "icon"
+                      "type": "text"
                     },
                     "textContent": "View Details"
                   }
@@ -1609,7 +1609,7 @@
                       "color": "inherit"
                     },
                     "attributes": {
-                      "type": "icon"
+                      "type": "text"
                     },
                     "textContent": "ADD TO CART"
                   }
@@ -1671,7 +1671,7 @@
                       "color": "inherit"
                     },
                     "attributes": {
-                      "type": "icon"
+                      "type": "text"
                     },
                     "textContent": "View Details"
                   }

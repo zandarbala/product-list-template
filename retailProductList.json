@@ -756,7 +756,7 @@
                 },
                 "attributes": {
                   "id": "mbrtfype_072lh",
-                  "type": "textWithIcon",
+                  "type": "text",
                   "isEnabled": true,
                   "action": "navigateTo",
                   "productIndex": "${index}",
@@ -1658,7 +1658,7 @@
                 },
                 "attributes": {
                   "id": "mbrtfype_072lh",
-                  "type": "textWithIcon",
+                  "type": "text",
                   "class": "outOfStock",
                   "isEnabled": true,
                   "action": "navigateTo",
