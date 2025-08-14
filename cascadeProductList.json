@@ -555,7 +555,7 @@
                   "type": "icon",
                   "class": "material-symbols-outlined fill add-to-cart-icon",
                   "data-id": "productCartButton",
-                  "isEnabled": "true",
+                  "isEnabled": true,
                   "productIndex": "${index}",
                   "action": "navigateTo"
                 },
@@ -585,7 +585,7 @@
                   "type": "icon",
                   "class": "material-symbols-outlined fill add-to-cart-icon",
                   "data-id": "digitalProduct",
-                  "isEnabled": "true",
+                  "isEnabled": true,
                   "productIndex": "${index}",
                   "action": "navigateTo"
                 },
@@ -1326,7 +1326,7 @@
                   "type": "icon",
                   "class": "material-symbols-outlined fill add-to-cart-icon",
                   "data-id": "productCartButton",
-                  "isEnabled": "true",
+                  "isEnabled": true,
                   "productIndex": "${index}",
                   "action": "navigateTo"
                 },
@@ -1356,7 +1356,7 @@
                   "type": "icon",
                   "class": "material-symbols-outlined fill add-to-cart-icon",
                   "data-id": "digitalProduct",
-                  "isEnabled": "true",
+                  "isEnabled": true,
                   "productIndex": "${index}",
                   "action": "navigateTo"
                 },
