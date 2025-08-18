@@ -1,63 +1,342 @@
 {
   "mobileJson": {
-    "canvasWidth": 310,
-    "imageHeight": "116px",
-    "renderImage": "./assets/tools/home_sections.png",
-    "verticalPosition": "450px",
-    "horizontalPosition": "240px"
-},
-  "desktopJson": {
     "domTree": {
       "tag": "div",
       "style": {
         "gap": "10px",
         "width": "100%",
-        "height": "150vh",
-        "display": "flex",
+        "height": "100vh",
         "position": "relative",
-        "justifyContent": "space-between"
+        "backgroundColor": "white",
+        "justify-content": "space-between"
       },
       "scripts": {
-        "handleClick": {
-          "body": "const event = new CustomEvent('productListHandleClick', {detail:value});document.dispatchEvent(event);",
+        "productListNavigationTo": {
+          "body": "window.location.href = 'home';",
+          "params": []
+        },
+        "onProductSortFilterBtnClick": {
+          "body": "const event = new CustomEvent('isProductSortFilterBtnClick', {details:{value}});document.dispatchEvent(event);",
           "params": [
             "value"
           ]
         }
       },
-      "cssStyles": {
-        ".atc-qv-button:hover,.zwe-product-card:hover .atc-qv-button": {
-          "opacity": "1 !important"
-        },
-        ".productImage": {
-          "transform": "scale(1)",
-          "transition": "transform 0.3s ease-in-out"
-        },
-        ".zwe-product-card:hover .productImage": {
-          "transform": "scale(1.1)"
-        },
-        ".product-list-img-container:hover ~ .quick-view-btn, .quick-view-btn:hover,.product-list-img-container:hover ~ .pl-add-to-cart-btn, .pl-add-to-cart-btn:hover,.pl-add-to-cart-btn:hover .quick-view-btn,.quick-view-btn:hover ~ .pl-add-to-cart-btn": {
-          "opacity": "1 !important",
-          "cursor": "pointer",
-          "textAlign": "center !important"
-        },
-        ".zwe-product-card.container:has(.pl-add-to-cart-btn:hover) .quick-view-btn": {
-          "opacity": "1 !important"
-        }
-      },
       "children": [
+        {
+          "tag": "div",
+          "style": {
+            "top": "13px",
+            "width": "100%",
+            "height": "70px",
+            "margin": "5px",
+            "position": "absolute",
+            "max-width": "1272px",
+            "max-height": "963px"
+          },
+          "children": [
+            {
+              "tag": "h1",
+              "style": {
+                "top": "0px",
+                "left": "25%",
+                "color": "var(--element-primary-color)",
+                "margin": "0px",
+                "fontSize": "20px",
+                "position": "absolute"
+              },
+              "condition": true,
+              "attributes": {
+                "data-id": "productListHeading"
+              },
+              "textContent": "Shop Everything"
+            },
+            {
+              "tag": "p",
+              "style": {
+                "top": "30px",
+                "left": "0",
+                "color": "var(--element-primary-color)",
+                "margin": "0px",
+                "fontSize": "14px",
+                "position": "absolute",
+                "text-align": "center"
+              },
+              "condition": true,
+              "attributes": {
+                "data-id": "productListSubHeading"
+              },
+              "textContent": "Transform your space and shop our paintings today!"
+            }
+          ],
+          "condition": false,
+          "attributes": {
+            "data-id": "productHeaderSection",
+            "is-container": true
+          }
+        },
+        {
+          "tag": "div",
+          "style": {
+            "top": "73px",
+            "left": "0px",
+            "width": "100%",
+            "height": "60px",
+            "margin": "5px",
+            "position": "absolute",
+            "max-width": "1272px",
+            "max-height": "963px"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "style": {
+                "top": "15px",
+                "left": "10px",
+                "color": "black",
+                "fontSize": "14px",
+                "position": "absolute"
+              },
+              "children": [
+                {
+                  "tag": "span",
+                  "style": {},
+                  "events": {
+                    "click": {
+                      "params": [],
+                      "function": "productListNavigationTo"
+                    }
+                  },
+                  "attributes": {
+                    "id": "mcrq5bqi_l2g2x",
+                    "class": "homeBreadCrumb"
+                  },
+                  "textContent": "Home"
+                },
+                {
+                  "tag": "span",
+                  "style": {},
+                  "attributes": {
+                    "id": "product-category-name",
+                    "value": "${categoryName}"
+                  },
+                  "textContent": " > ${categoryName}"
+                }
+              ],
+              "condition": true,
+              "attributes": {
+                "id": "product-list-bread-crumb",
+                "data-id": "productListBreadCrumb"
+              }
+            },
+            {
+              "tag": "span",
+              "style": {
+                "top": "15px",
+                "left": "250px",
+                "color": "black",
+                "width": "30px",
+                "fontSize": "16px",
+                "position": "absolute",
+                "fontWeight": "500"
+              },
+              "events": {
+                "click": {
+                  "params": [
+                    "true"
+                  ],
+                  "function": "onProductSortFilterBtnClick"
+                }
+              },
+              "condition": true,
+              "attributes": {
+                "id": "product-filter-btn",
+                "class": "productListFilterBtn material-symbols-outlined",
+                "data-id": "productListSortFilter"
+              },
+              "textContent": "filter_list"
+            },
+            {
+              "tag": "div",
+              "style": {
+                "gap": "10px",
+                "top": "25px",
+                "left": "10px",
+                "width": "150px",
+                "height": "50px",
+                "display": "flex",
+                "position": "absolute",
+                "alignItems": "stretch",
+                "flexDirection": "row",
+                "justifyContent": "center"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "style": {
+                    "display": "flex",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center"
+                  },
+                  "children": [
+                    {
+                      "tag": "label",
+                      "style": {
+                        "width": "35px",
+                        "height": "20px",
+                        "display": "inline-block",
+                        "position": "relative"
+                      },
+                      "children": [
+                        {
+                          "tag": "input",
+                          "style": {
+                            "display": "none"
+                          },
+                          "events": {
+                            "click": {
+                              "params": [
+                                "veg"
+                              ],
+                              "function": "onProductFoodFilterClick"
+                            }
+                          },
+                          "attributes": {
+                            "type": "checkbox",
+                            "data-control": "isVegEnabled"
+                          }
+                        },
+                        {
+                          "tag": "span",
+                          "style": {
+                            "top": "0",
+                            "left": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "cursor": "pointer",
+                            "position": "absolute",
+                            "transition": "0.4s",
+                            "borderRadius": "34px",
+                            "backgroundColor": "#dfdfdf",
+                            "-webkit-transition": "0.4s"
+                          },
+                          "attributes": {
+                            "class": "slider1 round"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": {
+                        "fontSize": "12px",
+                        "paddingLeft": "5px"
+                      },
+                      "textContent": "Veg"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": {
+                    "display": "flex",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center"
+                  },
+                  "children": [
+                    {
+                      "tag": "label",
+                      "style": {
+                        "width": "35px",
+                        "height": "20px",
+                        "display": "inline-block",
+                        "position": "relative"
+                      },
+                      "children": [
+                        {
+                          "tag": "input",
+                          "style": {
+                            "display": "none"
+                          },
+                          "events": {
+                            "click": {
+                              "params": [
+                                "non-veg"
+                              ],
+                              "function": "onProductFoodFilterClick"
+                            }
+                          },
+                          "attributes": {
+                            "type": "checkbox",
+                            "data-control": "isNonVegEnabled"
+                          }
+                        },
+                        {
+                          "tag": "span",
+                          "style": {
+                            "top": "0",
+                            "left": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "cursor": "pointer",
+                            "position": "absolute",
+                            "transition": "0.4s",
+                            "borderRadius": "34px",
+                            "backgroundColor": "#dfdfdf",
+                            "-webkit-transition": "0.4s"
+                          },
+                          "attributes": {
+                            "class": "slider2 round"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": {
+                        "fontSize": "12px",
+                        "paddingLeft": "5px",
+                        "white-space": "nowrap"
+                      },
+                      "textContent": "Non Veg"
+                    }
+                  ]
+                }
+              ],
+              "condition": true,
+              "attributes": {
+                "data-id": "productListFoodFilter"
+              }
+            }
+          ],
+          "condition": true,
+          "attributes": {
+            "id": "product-top-bar",
+            "is-container": true,
+            "data-id": "productTopBar"
+          }
+        },
         {
           "tag": "zwe-product-filter",
           "style": {
             "top": "0",
             "left": "0",
-            "width": "25%",
+            "width": "0",
             "height": "100%"
           },
+          "pageName": "Filter",
+          "condition": true,
           "attributes": {
             "id": "mbrtfype_1nqkn",
-            "data-role": "webComponent"
+            "data-id": "productListFilterSection"
           },
+          "elementsList": [
+            {
+              "id": "product-list-container"
+            }
+          ],
           "configuration": {
             "filterData": {
               "sortArray": [
@@ -144,39 +423,1253 @@
                   "type": "radio-option",
                   "options": [
                     {
-                      "value": {
-                        "op": ">",
-                        "value": 4
-                      },
-                      "display": "4 stars & above"
+                      "value": "inStock",
+                      "display": "Instock"
                     },
                     {
-                      "value": {
-                        "op": ">",
-                        "value": 3
-                      },
-                      "display": "3 stars & above"
-                    },
-                    {
-                      "value": {
-                        "op": ">",
-                        "value": 2
-                      },
-                      "display": "2 stars & above"
-                    },
-                    {
-                      "value": {
-                        "op": ">",
-                        "value": 1
-                      },
-                      "display": "1 star & above"
+                      "value": "outOfStock",
+                      "display": "Out of stock"
                     }
                   ],
-                  "fieldName": "rating",
+                  "fieldName": "stock",
                   "isDefault": true,
                   "isVisible": true,
-                  "filterName": "Customer Ratings",
-                  "optionType": "Condition"
+                  "filterName": "Stock",
+                  "optionType": "Simple"
+                }
+              ]
+            },
+            "filterTemplate": "filterTemplateOne",
+            "filterTemplateTextColor": "",
+            "filterTemplateBackgroundColor": ""
+          }
+        },
+        {
+          "tag": "zb-product-list",
+          "card": {
+            "tag": "div",
+            "style": {
+              "width": "130px",
+              "height": "390px",
+              "position": "relative"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "style": {
+                  "position": "absolute",
+                  "zIndex": "2",
+                  "width": "100%",
+                  "height": "100%",
+                  "pointerEvents": "none"
+                },
+                "condition": "${badges && badges[0]}",
+                "attributes": {
+                  "data-id": "badgeHtml"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attributes": {
+                      "awsUrl": "${awsUrl}",
+                      "class": "badge-common",
+                      "data-id": "badgeHtmls",
+                      "badgevalue": "${badges[0]}"
+                    },
+                    "style": {
+                      "display": "flex"
+                    }
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "style": {
+                  "width": "100%",
+                  "height": "100%",
+                  "position": "absolute",
+                  "zIndex": "2",
+                  "pointerEvents": "none"
+                },
+                "condition": "${!badges && ribbon}",
+                "attributes": {
+                  "id": "ribbon-main",
+                  "data-id": "topRibbon"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attributes": {
+                      "ribbonvalues": "${ribbon}",
+                      "data-id": "topRibbons"
+                    }
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "style": {
+                  "width": "100%",
+                  "height": "100%",
+                  "position": "absolute",
+                  "zIndex": "2",
+                  "pointerEvents": "none"
+                },
+                "attributes": {
+                  "id": "ribbon-main",
+                  "data-id": "bottomRibbon"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attributes": {
+                      "ribbonvalues": "${ribbon}",
+                      "data-id": "bottomRibbons"
+                    },
+                    "style": {
+                      "bottom": "0px",
+                      "position": "absolute"
+                    }
+                  }
+                ],
+                "condition": "${!badges && ribbon}"
+              },
+              {
+                "tag": "div",
+                "style": {
+                  "width": "130px",
+                  "height": "287px",
+                  "position": "absolute",
+                  "overflow": "hidden",
+                  "cursor": "pointer",
+                  "border": "1px solid #eee"
+                },
+                "children": [
+                  {
+                    "tag": "img",
+                    "style": {
+                      "width": "100%",
+                      "height": "100%",
+                      "position": "relative",
+                      "objectFit": "contain"
+                    },
+                    "attributes": {
+                      "id": "mbrtfype_6dkbn",
+                      "alt": "${name}",
+                      "src": "${ featuredImage ? awsUrl+featuredImage : 'assets/image-not-available.png'}",
+                      "type": "image",
+                      "class": "productImage",
+                      "zb-other-angle": true
+                    }
+                  }
+                ],
+                "attributes": {
+                  "isEnabled": true,
+                  "class": "product-list-img-container",
+                  "data-id": "productImage",
+                  "type": "image",
+                  "action": "navigateTo",
+                  "productIndex": "${index}"
+                }
+              },
+              {
+                "tag": "div",
+                "condition": "${isVeg != null && isVeg}",
+                "attributes": {
+                  "data-id": "productVegLabel",
+                  "isEnabled": true
+                },
+                "children": [
+                  {
+                    "tag": "img",
+                    "attributes": {
+                      "src": "assets/product-list/veg.png",
+                      "alt": "Veg",
+                      "data-id": "veg"
+                    },
+                    "style": {
+                      "width": "100%",
+                      "height": "100%"
+                    }
+                  }
+                ],
+                "style": {
+                  "position": "absolute",
+                  "top": "295px",
+                  "right": "5px",
+                  "height": "25px",
+                  "width": "25px"
+                }
+              },
+              {
+                "tag": "div",
+                "condition": "${isVeg != null && !isVeg}",
+                "children": [
+                  {
+                    "tag": "img",
+                    "attributes": {
+                      "src": "assets/product-list/non-veg.png",
+                      "alt": "Non-veg",
+                      "data-id": "nonVeg"
+                    },
+                    "style": {
+                      "width": "100%",
+                      "height": "100%"
+                    }
+                  }
+                ],
+                "style": {
+                  "position": "absolute",
+                  "top": "295px",
+                  "right": "5px",
+                  "height": "25px",
+                  "width": "25px"
+                },
+                "attributes": {
+                  "data-id": "productNonVegLabel",
+                  "isEnabled": true
+                }
+              },
+              {
+                "tag": "a",
+                "style": {
+                  "position": "absolute",
+                  "padding": "5px 12px",
+                  "height": "48px",
+                  "width": "100px",
+                  "top": "290px",
+                  "fontSize": "var(--product-list-fontSize,13px)",
+                  "fontWeight": "400",
+                  "color": "var(--dark-color,white)",
+                  "lineHeight": "1.5",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical"
+                },
+                "attributes": {
+                  "id": "mbrtfype_b2lb0",
+                  "type": "text",
+                  "class": "productTitle ",
+                  "isEnabled": true,
+                  "title": "${name}",
+                  "data-id": "productName"
+                },
+                "textContent": "${name}"
+              },
+              {
+                "tag": "span",
+                "style": {
+                  "position": "absolute",
+                  "top": "340px",
+                  "width": "70px",
+                  "height": "25px",
+                  "padding": "5px 12px",
+                  "fontSize": "14px",
+                  "color": "white",
+                  "fontFamily": "Arial",
+                  "fontWeight": "700"
+                },
+                "attributes": {
+                  "id": "mbrtfype_pxcpv",
+                  "type": "text",
+                  "class": "productPrice ",
+                  "isEnabled": true,
+                  "data-id": "productPrice"
+                },
+                "textContent": "${currency}${price}"
+              },
+              {
+                "tag": "span",
+                "condition": "${weightUnit}",
+                "style": {
+                  "position": "absolute",
+                  "top": "340px",
+                  "left": "71px",
+                  "width": "55px",
+                  "height": "25px",
+                  "padding": "5px 12px",
+                  "fontSize": "13px",
+                  "color": "grey",
+                  "fontFamily": "Arial",
+                  "fontWeight": "400"
+                },
+                "attributes": {
+                  "id": "mbrtfype_pxcpv",
+                  "type": "text",
+                  "class": "productPrice ",
+                  "isEnabled": true,
+                  "data-id": "productWeightUnit"
+                },
+                "textContent": "/ ${weightUnit}"
+              },
+              {
+                "tag": "span",
+                "condition": "${costComparePrice}",
+                "style": {
+                  "top": "368px",
+                  "padding": "2px 12px",
+                  "width": "60px",
+                  "height": "20px",
+                  "position": "absolute",
+                  "fontFamily": "Arial",
+                  "fontWeight": "400",
+                  "textDecoration": "line-through",
+                  "color": "grey",
+                  "alignItems": "center",
+                  "fontSize": "calc(var(--product-list-fontSize,15px) - 4px)"
+                },
+                "attributes": {
+                  "id": "mbrtfype_lcuai",
+                  "type": "text",
+                  "class": "productCostComparePrice ",
+                  "isEnabled": true,
+                  "data-id": "productCostComparePrice"
+                },
+                "textContent": "${currency}${costComparePrice}"
+              },
+              {
+                "tag": "div",
+                "attributes": {
+                  "class": "discountPercentage",
+                  "data-id": "productDiscount",
+                  "type": "text",
+                  "isEnabled": true,
+                  "isFreeLabel": true,
+                  "discountFormat": "{discountPercentage}% OFF"
+                },
+                "style": {
+                  "backgroundColor": "var(--primary-color,grey)",
+                  "color": "white",
+                  "width": "60px",
+                  "height": "20px",
+                  "top": "365px",
+                  "right": "5px",
+                  "borderRadius": "30px",
+                  "position": "absolute",
+                  "textAlign": "center",
+                  "fontFamily": "Arial",
+                  "fontSize": "var(--product-list-fontSize,10px)",
+                  "fontWeight": "700",
+                  "alignItems": "center",
+                  "alignContent": "center"
+                },
+                "textContent": "${discountPercentage}% OFF"
+              },
+              {
+                "tag": "span",
+                "condition": "${shortDescription}",
+                "style": {
+                  "top": "290px",
+                  "left": "5px",
+                  "width": "120px",
+                  "height": "20px",
+                  "position": "absolute",
+                  "fontSize": "14px",
+                  "color": "#000000",
+                  "fontFamily": "Arial",
+                  "fontWeight": "400",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical",
+                  "visibility": "hidden"
+                },
+                "attributes": {
+                  "id": "mbrtfype_9jiii",
+                  "type": "text",
+                  "class": "productDescription ",
+                  "isEnabled": false,
+                  "data-id": "productDescription"
+                },
+                "textContent": "${shortDescription}"
+              },
+              {
+                "tag": "button",
+                "condition": "${!isDigitalProduct}",
+                "style": {
+                  "align-item": "center",
+                  "width": "64.5px",
+                  "height": "30px",
+                  "top": "256px",
+                  "backgroundColor": "white",
+                  "cursor": "pointer",
+                  "opacity": "0",
+                  "position": "absolute",
+                  "fontSize": "8px",
+                  "fontWeight": "700",
+                  "color": "var(--primary-color,black)",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "border": "none",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+                },
+                "textContent": "QUICK VIEW",
+                "attributes": {
+                  "type": "text",
+                  "class": "quick-view-btn",
+                  "data-id": "productQuickView",
+                  "isEnabled": true,
+                  "action": "quickView",
+                  "productIndex": "${index}"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${((multiLocationVariantStocks?.[0]?.stock == -1) || (multiLocationVariantStocks?.[0]?.stock >=1)) && !isDigitalProduct}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "64.5px",
+                  "left": "65px",
+                  "top": "256px",
+                  "height": "30px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "8px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+                },
+                "textContent": "ADD TO BAG",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productCartButton",
+                  "productIndex": "${index}",
+                  "action": "navigateTo"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${isDigitalProduct}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "64.5px",
+                  "left": "33.5px",
+                  "top": "255px",
+                  "height": "30px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "8px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+                },
+                "textContent": "View Details",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "digitalProduct",
+                  "productIndex": "${index}",
+                  "action": "navigateTo"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${multiLocationVariantStocks?.[0]?.stock === 0 && multiLocationVariantStocks?.[0]?.isPreorder && allowPreorder}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "64.5px",
+                  "left": "65px",
+                  "top": "255px",
+                  "height": "30px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "8px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical"
+                },
+                "textContent": "Pre-order Available",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productPreOrder",
+                  "productIndex": "${index}",
+                  "action": "navigateTo"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${multiLocationVariantStocks?.[0]?.stock === 0 && !(multiLocationVariantStocks?.[0]?.isPreorder && allowPreorder && !isSubscription)}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "64.5px",
+                  "left": "65px",
+                  "top": "255px",
+                  "height": "30px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "8px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical"
+                },
+                "textContent": "Out of stock",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productOutOfStock"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${notAvailable}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "64.5px",
+                  "left": "65px",
+                  "top": "255px",
+                  "height": "30px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "8px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out",
+                  "lineHeight": "1.5",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical"
+                },
+                "textContent": "Menu not available on this time",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productNotAvailable"
+                }
+              }
+            ],
+            "attributes": {
+              "id": "mbrtfype_jyd2w",
+              "class": "zwe-product-card container",
+              "productIndex": "${index}"
+            }
+          },
+          "style": {
+            "top": "180px",
+            "right": "0px",
+            "width": "100%",
+            "height": "100%",
+            "overflow": "hidden scroll",
+            "position": "absolute",
+            "backgroundColor": "white"
+          },
+          "pageName": "Product list",
+          "attributes": {
+            "id": "mbrtfype_s4yhm",
+            "discountFormat": "{value}% OFF"
+          },
+          "elementsList": [
+            {
+              "id": "product-list-container"
+            }
+          ],
+          "configuration": {
+            "api": "getCategoryProducts",
+            "datas": [
+              "name",
+              "price",
+              "featuredImage",
+              "costComparePrice"
+            ],
+            "filter": {
+              "data-id": "productListFilterSection"
+            },
+            "isStar": true,
+            "foodFilter": {
+              "data-id": "productListFoodFilter"
+            },
+            "navigation": {
+              "data-id": "productListBreadCrumb"
+            },
+            "sortOption": {
+              "data-id": "productListSortOption"
+            },
+            "ratingColor": "string",
+            "productCount": 20,
+            "taxButtonText": "string",
+            "taxTitleColor": "string",
+            "addToCartLabel": "string",
+            "manyStockLabel": "string",
+            "isDisplayRating": "boolean",
+            "productCardDesign": "",
+            "availabilityHeading": "string",
+            "isFavoriteMainProduct": true,
+            "productListType": "COMMON"
+          },
+          "isConfigDialog": true
+        }
+      ],
+      "cssStyles": {
+        ".zwe-product-card": {
+          "&:hover": {
+            "box-shadow": "0px 2px 15px 0px #dedede"
+          },
+          "&:hover .quick-view-btn": {
+            "opacity": "1 !important"
+          },
+          "&:hover .add-to-bag-btn": {
+            "opacity": "1 !important"
+          },
+          "& .productImage": {
+            "transform": "scale(1)",
+            "transition": "transform 0.3s ease-in-out"
+          },
+          "&:hover .productImage": {
+            "transform": "scale(1.1)"
+          }
+        }
+      }
+    },
+    "canvasWidth": 310,
+    "imageHeight": "116px",
+    "renderImage": "./assets/tools/home_sections.png",
+    "verticalPosition": "450px",
+    "horizontalPosition": "240px"
+  },
+  "desktopJson": {
+    "domTree": {
+      "tag": "div",
+      "style": {
+        "gap": "10px",
+        "width": "100%",
+        "height": "150vh",
+        "position": "relative",
+        "justify-content": "space-between"
+      },
+      "scripts": {
+        "handleClick": {
+          "body": "console.log('value...', value);const event = new CustomEvent('productListHandleClick', {detail:value});console.log('event...', event);document.dispatchEvent(event);",
+          "params": [
+            "value"
+          ]
+        },
+        "onProductSortOpen": {
+          "body": "const trigger = document.getElementsByClassName('sort-menu-btn');const menu = document.getElementsByClassName('sort-menu-list');trigger.addEventListener('click', (event) => {menu.toggle(event);});",
+          "params": []
+        },
+        "onProductSortClick": {
+          "body": "const event = new CustomEvent('selectedProductSortValue', {detail:value});document.dispatchEvent(event);",
+          "params": [
+            "value"
+          ]
+        },
+        "onProductFilterBtnClick": {
+          "body": "const event = new CustomEvent('isProductFilterBtnClick', {detail:true});document.dispatchEvent(event);",
+          "params": []
+        },
+        "productListNavigationTo": {
+          "body": "window.location.href = 'home';",
+          "params": []
+        },
+        "onProductFoodFilterClick": {
+          "body": "const event = new CustomEvent('selectedProductFoodFilterValue', {detail:value});document.dispatchEvent(event);",
+          "params": [
+            "value"
+          ]
+        }
+      },
+      "children": [
+        {
+          "tag": "div",
+          "style": {
+            "top": "13px",
+            "width": "100%",
+            "height": "70px",
+            "margin": "5px",
+            "position": "absolute",
+            "max-width": "1272px",
+            "max-height": "963px"
+          },
+          "children": [
+            {
+              "tag": "h1",
+              "style": {
+                "top": "20px",
+                "left": "40%",
+                "color": "var(--element-primary-color, rgb(44, 22, 25))",
+                "margin": "0px",
+                "fontSize": "50px",
+                "position": "absolute",
+                "fontFamily": "'EB Garamond', serif",
+                "fontWeight": "700"
+              },
+              "condition": true,
+              "attributes": {
+                "data-id": "productListHeading"
+              },
+              "textContent": "Shop Your Tablets"
+            },
+            {
+              "tag": "p",
+              "style": {
+                "top": "90px",
+                "left": "40%",
+                "color": "var(--element-primary-color, rgb(44, 22, 25))",
+                "margin": "0px",
+                "fontSize": "20px",
+                "position": "absolute",
+                "fontFamily": "'EB Garamond', serif",
+                "fontWeight": "700"
+              },
+              "condition": true,
+              "attributes": {
+                "data-id": "productListSubHeading"
+              },
+              "textContent": "Know your tablets and shop your tablets today!"
+            }
+          ],
+          "condition": true,
+          "attributes": {
+            "data-id": "productHeaderSection",
+            "is-container": true
+          }
+        },
+        {
+          "tag": "div",
+          "style": {
+            "top": "170px",
+            "left": "0px",
+            "width": "100%",
+            "height": "60px",
+            "margin": "0px 20px",
+            "position": "absolute",
+            "max-width": "1272px",
+            "max-height": "963px",
+            "cursor": "pointer",
+            "backgroundColor": "rgb(222, 221, 220)"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "style": {
+                "top": "20px",
+                "left": "1000px",
+                "color": "black",
+                "fontSize": "14px",
+                "position": "absolute"
+              },
+              "children": [
+                {
+                  "tag": "span",
+                  "style": {},
+                  "events": {
+                    "click": {
+                      "params": [],
+                      "function": "productListNavigationTo"
+                    }
+                  },
+                  "attributes": {
+                    "id": "mcrq5bqi_l2g2x",
+                    "class": "homeBreadCrumb"
+                  },
+                  "textContent": "Home"
+                },
+                {
+                  "tag": "span",
+                  "style": {},
+                  "attributes": {
+                    "id": "product-category-name",
+                    "value": "${categoryName}"
+                  },
+                  "textContent": " > ${categoryName}"
+                }
+              ],
+              "condition": false,
+              "attributes": {
+                "data-id": "productListBreadCrumb"
+              }
+            },
+            {
+              "tag": "a",
+              "style": {
+                "top": "13px",
+                "left": "25px",
+                "color": "#000",
+                "width": "90px",
+                "height": "35px",
+                "padding": "8px 16px",
+                "position": "absolute",
+                "max-width": "1272px",
+                "max-height": "57px",
+                "borderRadius": "0px",
+                "cursor": "pointer",
+                "fontFamily": "Montserrat, sans-serif",
+                "fontWeight": "700"
+              },
+              "events": {
+                "click": {
+                  "params": [],
+                  "function": "onProductFilterBtnClick"
+                }
+              },
+              "condition": true,
+              "attributes": {
+                "data-id": "productListFilterButton",
+                "data-role": "iconButton"
+              },
+              "children": [
+                {
+                  "tag": "span",
+                  "style": {
+                    "position": "absolute",
+                    "top": "8px",
+                    "left": "7px",
+                    "font-size": "14px"
+                  },
+                  "textContent": "FILTER"
+                },
+                {
+                  "tag": "span",
+                  "style": {
+                    "position": "absolute",
+                    "top": "8px",
+                    "left": "60px",
+                    "font-size": "17px",
+                    "fontWeight": "700"
+                  },
+                  "attributes": {
+                    "class": "material-symbols-outlined"
+                  },
+                  "textContent": "south"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "style": {
+                "gap": "10px",
+                "top": "5px",
+                "left": "800px",
+                "width": "150px",
+                "height": "50px",
+                "display": "flex",
+                "position": "absolute",
+                "alignItems": "stretch",
+                "flexDirection": "row",
+                "justifyContent": "center"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "style": {
+                    "display": "flex",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center"
+                  },
+                  "children": [
+                    {
+                      "tag": "label",
+                      "style": {
+                        "width": "35px",
+                        "height": "20px",
+                        "display": "inline-block",
+                        "position": "relative"
+                      },
+                      "children": [
+                        {
+                          "tag": "input",
+                          "style": {
+                            "display": "none"
+                          },
+                          "events": {
+                            "click": {
+                              "params": [
+                                "veg"
+                              ],
+                              "function": "onProductFoodFilterClick"
+                            }
+                          },
+                          "attributes": {
+                            "type": "checkbox",
+                            "data-control": "isVegEnabled"
+                          }
+                        },
+                        {
+                          "tag": "span",
+                          "style": {
+                            "top": "0",
+                            "left": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "cursor": "pointer",
+                            "position": "absolute",
+                            "transition": "0.4s",
+                            "borderRadius": "34px",
+                            "backgroundColor": "#dfdfdf",
+                            "-webkit-transition": "0.4s"
+                          },
+                          "attributes": {
+                            "class": "slider1 round"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": {
+                        "fontSize": "12px",
+                        "paddingLeft": "5px"
+                      },
+                      "textContent": "Veg"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "style": {
+                    "display": "flex",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center"
+                  },
+                  "children": [
+                    {
+                      "tag": "label",
+                      "style": {
+                        "width": "35px",
+                        "height": "20px",
+                        "display": "inline-block",
+                        "position": "relative"
+                      },
+                      "children": [
+                        {
+                          "tag": "input",
+                          "style": {
+                            "display": "none"
+                          },
+                          "events": {
+                            "click": {
+                              "params": [
+                                "non-veg"
+                              ],
+                              "function": "onProductFoodFilterClick"
+                            }
+                          },
+                          "attributes": {
+                            "type": "checkbox",
+                            "data-control": "isNonVegEnabled"
+                          }
+                        },
+                        {
+                          "tag": "span",
+                          "style": {
+                            "top": "0",
+                            "left": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "cursor": "pointer",
+                            "position": "absolute",
+                            "transition": "0.4s",
+                            "borderRadius": "34px",
+                            "backgroundColor": "#dfdfdf",
+                            "-webkit-transition": "0.4s"
+                          },
+                          "attributes": {
+                            "class": "slider2 round"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "style": {
+                        "fontSize": "12px",
+                        "paddingLeft": "5px",
+                        "white-space": "nowrap"
+                      },
+                      "textContent": "Non Veg"
+                    }
+                  ]
+                }
+              ],
+              "condition": false,
+              "attributes": {
+                "data-id": "productListFoodFilter"
+              }
+            },
+            {
+              "tag": "div",
+              "style": {
+                "position": "absolute",
+                "top": "13px",
+                "left": "130px",
+                "width": "120px",
+                "height": "36px"
+              },
+              "children": [
+                {
+                  "tag": "a",
+                  "style": {
+                    "top": "0px",
+                    "left": "0px",
+                    "color": "#000",
+                    "width": "105px",
+                    "height": "35px",
+                    "padding": "0 12px",
+                    "position": "absolute",
+                    "font-weight": "700",
+                    "fontFamily": "Montserrat, sans-serif",
+                    "cursor": "pointer"
+                  },
+                  "events": {
+                    "load": {
+                      "params": [],
+                      "function": "onProductSortOpen"
+                    }
+                  },
+                  "attributes": {
+                    "class": "sort-menu-btn",
+                    "data-role": "iconButton"
+                  },
+                  "children": [
+                    {
+                      "tag": "span",
+                      "style": {
+                        "position": "absolute",
+                        "top": "7px",
+                        "left": "8px",
+                        "font-size": "14px"
+                      },
+                      "textContent": "SORT BY"
+                    },
+                    {
+                      "tag": "span",
+                      "style": {
+                        "position": "absolute",
+                        "top": "7px",
+                        "left": "75px",
+                        "font-size": "17px",
+                        "fontWeight": "700"
+                      },
+                      "attributes": {
+                        "class": "material-symbols-outlined"
+                      },
+                      "textContent": "south"
+                    }
+                  ]
+                },
+                {
+                  "tag": "zwe-menu",
+                  "card": {
+                    "tag": "zwe-menu-item",
+                    "events": {
+                      "click": {
+                        "params": [
+                          {
+                            "value": "${value}",
+                            "display": "${display}"
+                          }
+                        ],
+                        "function": "onProductSortClick"
+                      }
+                    },
+                    "attributes": {
+                      "value": "${value}"
+                    },
+                    "textContent": "${display}"
+                  },
+                  "attributes": {
+                    "class": "sort-menu-list"
+                  },
+                  "configuration": {
+                    "customData": [
+                      {
+                        "value": {
+                          "order": "ASC",
+                          "fieldName": "name"
+                        },
+                        "display": "Name : Ascending",
+                        "isVisible": true
+                      },
+                      {
+                        "value": {
+                          "order": "DESC",
+                          "fieldName": "name"
+                        },
+                        "display": "Name : Descending",
+                        "isVisible": true
+                      },
+                      {
+                        "value": {
+                          "order": "DESC",
+                          "fieldName": "price"
+                        },
+                        "display": "Price : Highest first",
+                        "isVisible": true
+                      },
+                      {
+                        "value": {
+                          "order": "ASC",
+                          "fieldName": "price"
+                        },
+                        "display": "Price : Lowest first",
+                        "isVisible": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "condition": true,
+              "attributes": {
+                "is-container": true,
+                "data-id": "productListSortOption"
+              }
+            }
+          ],
+          "condition": true,
+          "attributes": {
+            "data-id": "productTopBar",
+            "is-container": true
+          }
+        },
+        {
+          "tag": "zwe-product-filter",
+          "style": {
+            "top": "280px",
+            "left": "0px",
+            "width": "25%",
+            "height": "100%",
+            "position": "absolute",
+            "backgroundColor": "white"
+          },
+          "pageName": "Filter",
+          "condition": true,
+          "attributes": {
+            "id": "mbrtfype_1nqkn",
+            "data-id": "productListFilterSection"
+          },
+          "elementsList": [
+            {
+              "id": "product-list-container"
+            }
+          ],
+          "configuration": {
+            "filterData": {
+              "sortArray": [
+                {
+                  "value": {
+                    "order": "ASC",
+                    "fieldName": "name"
+                  },
+                  "display": "Name : Ascending",
+                  "isVisible": true
+                },
+                {
+                  "value": {
+                    "order": "DESC",
+                    "fieldName": "name"
+                  },
+                  "display": "Name : Descending",
+                  "isVisible": true
+                },
+                {
+                  "value": {
+                    "order": "DESC",
+                    "fieldName": "price"
+                  },
+                  "display": "Price : Highest first",
+                  "isVisible": true
+                },
+                {
+                  "value": {
+                    "order": "ASC",
+                    "fieldName": "price"
+                  },
+                  "display": "Price : Lowest first",
+                  "isVisible": true
+                }
+              ],
+              "filterArray": [
+                {
+                  "type": "check-box",
+                  "options": [
+                    {
+                      "value": {
+                        "end": 499,
+                        "begin": 0
+                      },
+                      "display": "$0 - $499"
+                    },
+                    {
+                      "value": {
+                        "end": 999,
+                        "begin": 500
+                      },
+                      "display": "$500 - $999"
+                    },
+                    {
+                      "value": {
+                        "end": 1999,
+                        "begin": 1000
+                      },
+                      "display": "$1000 - $1999"
+                    },
+                    {
+                      "value": {
+                        "end": 3999,
+                        "begin": 2000
+                      },
+                      "display": "$2000 - $3999"
+                    },
+                    {
+                      "value": {
+                        "end": 10000,
+                        "begin": 4000
+                      },
+                      "display": "$4000 - $10000"
+                    }
+                  ],
+                  "fieldName": "price",
+                  "isDefault": true,
+                  "isVisible": true,
+                  "filterName": "Price",
+                  "optionType": "Range"
                 },
                 {
                   "type": "radio-option",
@@ -198,14 +1691,39 @@
                 }
               ]
             },
-            "filterMode": "normal",
+            "filterButton": {
+              "data-id": "productListFilterButton"
+            },
+            "layoutDetails": {
+              "layoutName": "leftFilter",
+              "containerStyle": [
+                {
+                  "tag": "zwe-product-filter",
+                  "style": {
+                    "top": "10%",
+                    "left": "10px",
+                    "width": "25%",
+                    "height": "100%",
+                    "position": "absolute"
+                  }
+                },
+                {
+                  "tag": "zb-product-list",
+                  "style": {
+                    "top": "10%",
+                    "right": "0",
+                    "width": "75%",
+                    "height": "100%",
+                    "overflow": "hidden scroll",
+                    "position": "absolute"
+                  }
+                }
+              ]
+            },
             "filterTemplate": "filterTemplateOne",
-            "showFoodFilter": false,
-            "showSortOption": false,
-            "showFilterButton": false,
-            "showFilterSection": true,
-            "filterTemplateTextColor": "",
-            "filterTemplateBackgroundColor": ""
+            "filterDrawerMode": "side",
+            "filterTemplateTextColor": "black",
+            "filterTemplateBackgroundColor": "white"
           }
         },
         {
@@ -221,7 +1739,87 @@
               {
                 "tag": "div",
                 "style": {
-                  "maxWidth": "287px",
+                  "position": "absolute",
+                  "zIndex": "2",
+                  "width": "100%",
+                  "height": "100%",
+                  "pointerEvents": "none"
+                },
+                "condition": "${badges && badges[0]}",
+                "attributes": {
+                  "data-id": "badgeHtml"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attributes": {
+                      "awsUrl": "${awsUrl}",
+                      "class": "badge-common",
+                      "data-id": "badgeHtmls",
+                      "badgevalue": "${badges[0]}"
+                    },
+                    "style": {
+                      "display": "flex"
+                    }
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "style": {
+                  "width": "100%",
+                  "height": "100%",
+                  "position": "absolute",
+                  "zIndex": "2",
+                  "pointerEvents": "none"
+                },
+                "condition": "${!badges && ribbon}",
+                "attributes": {
+                  "id": "ribbon-main",
+                  "data-id": "topRibbon"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attributes": {
+                      "ribbonvalues": "${ribbon}",
+                      "data-id": "topRibbons"
+                    }
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "style": {
+                  "width": "100%",
+                  "height": "100%",
+                  "position": "absolute",
+                  "zIndex": "2",
+                  "pointerEvents": "none"
+                },
+                "attributes": {
+                  "id": "ribbon-main",
+                  "data-id": "bottomRibbon"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attributes": {
+                      "ribbonvalues": "${ribbon}",
+                      "data-id": "bottomRibbons"
+                    },
+                    "style": {
+                      "bottom": "0px",
+                      "position": "absolute"
+                    }
+                  }
+                ],
+                "condition": "${!badges && ribbon}"
+              },
+              {
+                "tag": "div",
+                "style": {
+                  "width": "290px",
                   "height": "287px",
                   "position": "absolute",
                   "overflow": "hidden",
@@ -237,21 +1835,12 @@
                       "position": "relative",
                       "objectFit": "contain"
                     },
-                    "events": {
-                      "click": {
-                        "function": "navigateDetailsPage",
-                        "params": [
-                          "${id}"
-                        ]
-                      }
-                    },
                     "attributes": {
                       "id": "mbrtfype_6dkbn",
                       "alt": "${name}",
                       "src": "${ featuredImage ? awsUrl+featuredImage : 'assets/image-not-available.png'}",
                       "type": "image",
                       "class": "productImage",
-                      "isEnabled": true,
                       "zb-other-angle": true
                     }
                   }
@@ -259,24 +1848,83 @@
                 "attributes": {
                   "isEnabled": true,
                   "class": "product-list-img-container",
-                  "data-role": "productImage",
-                  "type": "image"
+                  "data-id": "productImage",
+                  "type": "image",
+                  "action": "navigateTo",
+                  "productIndex": "${index}"
+                }
+              },
+              {
+                "tag": "div",
+                "condition": "${isVeg != null && isVeg}",
+                "attributes": {
+                  "data-id": "productVegLabel",
+                  "isEnabled": true
+                },
+                "children": [
+                  {
+                    "tag": "img",
+                    "attributes": {
+                      "src": "assets/product-list/veg.png",
+                      "alt": "Veg",
+                      "data-id": "veg"
+                    },
+                    "style": {
+                      "width": "100%",
+                      "height": "100%"
+                    }
+                  }
+                ],
+                "style": {
+                  "position": "absolute",
+                  "top": "300px",
+                  "right": "5px",
+                  "height": "25px",
+                  "width": "25px"
+                }
+              },
+              {
+                "tag": "div",
+                "condition": "${isVeg != null && !isVeg}",
+                "children": [
+                  {
+                    "tag": "img",
+                    "attributes": {
+                      "src": "assets/product-list/non-veg.png",
+                      "alt": "Non-veg",
+                      "data-id": "nonVeg"
+                    },
+                    "style": {
+                      "width": "100%",
+                      "height": "100%"
+                    }
+                  }
+                ],
+                "style": {
+                  "position": "absolute",
+                  "top": "300px",
+                  "right": "5px",
+                  "height": "25px",
+                  "width": "25px"
+                },
+                "attributes": {
+                  "data-id": "productNonVegLabel",
+                  "isEnabled": true
                 }
               },
               {
                 "tag": "a",
                 "style": {
                   "position": "absolute",
-                  "padding": "5px 12px",
+                  "padding": "5px 10px",
                   "height": "50px",
-                  "width": "280px",
+                  "width": "260px",
                   "top": "300px",
                   "fontSize": "var(--product-list-fontSize,13px)",
                   "fontWeight": "400",
                   "color": "var(--dark-color,black)",
                   "lineHeight": "1.5",
                   "overflow": "hidden",
-                  "cursor": "pointer",
                   "textOverflow": "ellipsis",
                   "display": "-webkit-box",
                   "wordBreak": "break-word",
@@ -289,41 +1937,16 @@
                   "class": "productTitle ",
                   "isEnabled": true,
                   "title": "${name}",
-                  "data-role": "productName"
+                  "data-id": "productName"
                 },
                 "textContent": "${name}"
               },
               {
                 "tag": "span",
-                "condition": "${weightUnit}",
                 "style": {
                   "position": "absolute",
                   "top": "347px",
-                  "left": "69px",
-                  "width": "70px",
-                  "height": "25px",
-                  "padding": "5px 12px",
-                  "fontSize": "13px",
-                  "color": "grey",
-                  "fontFamily": "Arial",
-                  "fontWeight": "400",
-                  "data-role": "productWeightUnit"
-                },
-                "attributes": {
-                  "id": "mbrtfype_pxcpv",
-                  "type": "text",
-                  "class": "productPrice ",
-                  "isEnabled": true,
-                  "data-role": "productWeightUnit"
-                },
-                "textContent": "/ ${weightUnit}"
-              },
-              {
-                "tag": "span",
-                "style": {
-                  "position": "absolute",
-                  "top": "347px",
-                  "width": "80px",
+                  "width": "100px",
                   "height": "25px",
                   "padding": "5px 12px",
                   "fontSize": "16px",
@@ -336,84 +1959,37 @@
                   "type": "text",
                   "class": "productPrice ",
                   "isEnabled": true,
-                  "data-role": "productPrice"
+                  "data-id": "productPrice"
                 },
                 "textContent": "${currency}${price}"
               },
               {
-                "tag": "button",
+                "tag": "span",
+                "condition": "${weightUnit}",
                 "style": {
-                  "align-item": "center",
-                  "width": "143.5px",
-                  "height": "30px",
-                  "top": "255px",
-                  "backgroundColor": "white",
-                  "cursor": "pointer",
-                  "opacity": "0",
                   "position": "absolute",
-                  "fontSize": "15px",
-                  "fontWeight": "700",
-                  "color": "var(--primary-color,black)",
-                  "fontFamily": "'Montserrat', sans-serif",
-                  "border": "none",
-                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
-                },
-                "textContent": "QUICK VIEW",
-                "condition": "${!isDigitalProduct}",
-                "events": {
-                  "click": {
-                    "function": "handleClick",
-                    "params": [
-                      "quickView"
-                    ]
-                  }
+                  "top": "347px",
+                  "left": "101px",
+                  "width": "80px",
+                  "height": "25px",
+                  "padding": "5px 12px",
+                  "fontSize": "13px",
+                  "color": "grey",
+                  "fontFamily": "Arial",
+                  "fontWeight": "400"
                 },
                 "attributes": {
-                  "id": "mbrtfype_9jiii",
+                  "id": "mbrtfype_pxcpv",
                   "type": "text",
-                  "class": "quick-view-btn",
-                  "isEnabled": true
-                }
-              },
-              {
-                "tag": "button",
-                "style": {
-                  "alignItem": "center",
-                  "width": "143.5px",
-                  "left": "143px",
-                  "top": "255px",
-                  "height": "30px",
-                  "opacity": "0",
-                  "cursor": "pointer",
-                  "position": "absolute",
-                  "border": "none",
-                  "fontSize": "15px",
-                  "fontWeight": "700",
-                  "color": "white",
-                  "fontFamily": "'Montserrat', sans-serif",
-                  "backgroundColor": "var(--primary-color)",
-                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
-                },
-                "textContent": "ADD TO CART",
-                "events": {
-                  "click": {
-                    "function": "handleClick",
-                    "params": [
-                      "navigateTo"
-                    ]
-                  }
-                },
-                "condition": "${((multiLocationVariantStocks?.[0]?.stock == -1) || (multiLocationVariantStocks?.[0]?.stock >=1)) && !isDigitalProduct}",
-                "attributes": {
-                  "id": "mbrtfype_9jiii",
-                  "type": "text",
-                  "class": "pl-add-to-cart-btn",
+                  "class": "productPrice ",
                   "isEnabled": true,
-                  "data-role": "productCartButton"
-                }
+                  "data-id": "productWeightUnit"
+                },
+                "textContent": "/ ${weightUnit}"
               },
               {
                 "tag": "span",
+                "condition": "${costComparePrice}",
                 "style": {
                   "top": "370px",
                   "left": "15px",
@@ -433,18 +2009,19 @@
                   "type": "text",
                   "class": "productCostComparePrice ",
                   "isEnabled": true,
-                  "data-role": "productCostComparePrice"
+                  "data-id": "productCostComparePrice"
                 },
-                "textContent": "${currency}${costComparePrice}",
-                "condition": "${costComparePrice}"
+                "textContent": "${currency}${costComparePrice}"
               },
               {
                 "tag": "div",
                 "attributes": {
                   "class": "discountPercentage",
-                  "data-role": "productDiscount",
+                  "data-id": "productDiscount",
                   "type": "text",
-                  "isEnabled": true
+                  "isEnabled": true,
+                  "isFreeLabel": true,
+                  "discountFormat": "{discountPercentage}% OFF"
                 },
                 "style": {
                   "backgroundColor": "var(--primary-color,grey)",
@@ -452,67 +2029,242 @@
                   "width": "90px",
                   "height": "25px",
                   "top": "350px",
-                  "left": "160px",
+                  "right": "5px",
                   "borderRadius": "30px",
                   "position": "absolute",
                   "textAlign": "center",
-                  "display": "flex",
-                  "justifyContent": "center",
-                  "flexDirection": "row",
                   "fontFamily": "Arial",
                   "fontSize": "var(--product-list-fontSize,12px)",
                   "fontWeight": "700",
-                  "alignItems": "center"
+                  "alignItems": "center",
+                  "alignContent": "center"
                 },
-                "children": [
-                  {
-                    "tag": "div",
-                    "style": {
-                      "width": "200px",
-                      "height": "15px",
-                      "position": "relative"
-                    },
-                    "attributes": {
-                      "id": "mbrtfype_77pkg",
-                      "type": "text"
-                    },
-                    "textContent": " % OFF"
-                  }
-                ]
+                "textContent": "${discountPercentage}% OFF"
               },
               {
                 "tag": "span",
                 "style": {
-                  "top": "308px",
+                  "top": "320px",
                   "left": "7px",
                   "width": "280px",
-                  "height": "45px",
+                  "height": "20px",
                   "position": "absolute",
                   "fontSize": "16px",
                   "color": "#000000",
                   "fontFamily": "Arial",
                   "fontWeight": "400",
-                  "display": "none"
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical",
+                  "visibility": "hidden"
                 },
                 "attributes": {
                   "id": "mbrtfype_9jiii",
                   "type": "text",
                   "class": "productDescription ",
                   "isEnabled": false,
-                  "data-role": "productDescription"
+                  "data-id": "productDescription"
                 },
                 "condition": "${shortDescription}",
                 "textContent": "${shortDescription}"
+              },
+              {
+                "tag": "button",
+                "condition": "${!isDigitalProduct}",
+                "style": {
+                  "align-item": "center",
+                  "width": "143.5px",
+                  "height": "40px",
+                  "top": "255px",
+                  "backgroundColor": "white",
+                  "cursor": "pointer",
+                  "opacity": "0",
+                  "position": "absolute",
+                  "fontSize": "15px",
+                  "fontWeight": "700",
+                  "color": "var(--primary-color,black)",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "border": "none",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+                },
+                "textContent": "QUICK VIEW",
+                "attributes": {
+                  "type": "text",
+                  "class": "quick-view-btn",
+                  "data-id": "productQuickView",
+                  "isEnabled": true,
+                  "action": "quickView",
+                  "productIndex": "${index}"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${((multiLocationVariantStocks?.[0]?.stock == -1) || (multiLocationVariantStocks?.[0]?.stock >=1)) && !isDigitalProduct}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "143.5px",
+                  "left": "143px",
+                  "top": "255px",
+                  "height": "40px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "15px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+                },
+                "textContent": "ADD TO BAG",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productCartButton",
+                  "productIndex": "${index}",
+                  "action": "navigateTo"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${isDigitalProduct}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "143.5px",
+                  "left": "71px",
+                  "top": "255px",
+                  "height": "40px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "15px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
+                },
+                "textContent": "View Details",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "digitalProduct",
+                  "productIndex": "${index}",
+                  "action": "navigateTo"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${multiLocationVariantStocks?.[0]?.stock === 0 && multiLocationVariantStocks?.[0]?.isPreorder && allowPreorder}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "143.5px",
+                  "left": "143px",
+                  "top": "255px",
+                  "height": "40px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "13px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical"
+                },
+                "textContent": "Pre-order Available",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productPreOrder",
+                  "productIndex": "${index}",
+                  "action": "navigateTo"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${multiLocationVariantStocks?.[0]?.stock === 0 && !(multiLocationVariantStocks?.[0]?.isPreorder && allowPreorder && !isSubscription)}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "143.5px",
+                  "left": "143px",
+                  "top": "255px",
+                  "height": "40px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "13px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical"
+                },
+                "textContent": "Out of stock",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productOutOfStock"
+                }
+              },
+              {
+                "tag": "button",
+                "condition": "${notAvailable}",
+                "style": {
+                  "alignItem": "center",
+                  "width": "143.5px",
+                  "left": "143px",
+                  "top": "255px",
+                  "height": "40px",
+                  "opacity": "0",
+                  "cursor": "pointer",
+                  "position": "absolute",
+                  "border": "none",
+                  "fontSize": "13px",
+                  "fontWeight": "700",
+                  "color": "white",
+                  "fontFamily": "'Montserrat', sans-serif",
+                  "backgroundColor": "var(--primary-color)",
+                  "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out",
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "display": "-webkit-box",
+                  "wordBreak": "break-word",
+                  "WebkitLineClamp": "2",
+                  "WebkitBoxOrient": "vertical"
+                },
+                "textContent": "Menu not available on this time",
+                "attributes": {
+                  "type": "text",
+                  "class": "add-to-bag-btn",
+                  "isEnabled": true,
+                  "data-id": "productNotAvailable"
+                }
               }
             ],
-            "events": {
-              "click": {
-                "function": "handleClick",
-                "params": [
-                  "navigateTo"
-                ]
-              }
-            },
             "attributes": {
               "id": "mbrtfype_jyd2w",
               "class": "zwe-product-card container",
@@ -520,42 +2272,96 @@
             }
           },
           "style": {
-            "top": "0",
-            "right": "0",
+            "top": "280px",
+            "right": "0px",
             "width": "75%",
             "height": "100%",
-            "overflow": "hidden scroll"
+            "overflow": "hidden scroll",
+            "position": "absolute",
+            "backgroundColor": "white"
           },
           "pageName": "Product list",
           "attributes": {
-            "id": "mbrtfype_s4yhm",
-            "data-role": "webComponent",
-            "discountFormat": "{discountPercentage}% OFF"
+            "id": "mbrtfype_s4yhm"
           },
           "elementsList": [
             {
-              "id": "product-list-container",
-              "tag": "box",
-              "elementName": "Box",
-              "isWebElement": true,
-              "updatedJsonName": "boxStyles"
+              "id": "product-list-container"
             }
           ],
           "configuration": {
-            "api": "featuredProducts",
+            "api": "getCategoryProducts",
             "datas": [
               "name",
               "price",
               "featuredImage",
               "costComparePrice"
             ],
-            "productCardDesign": "furnitureProductList",
-            "columnGap": "",
-            "backgroundColor": ""
+            "filter": {
+              "data-id": "productListFilterSection"
+            },
+            "isStar": true,
+            "foodFilter": {
+              "data-id": "productListFoodFilter"
+            },
+            "navigation": {
+              "data-id": "productListBreadCrumb"
+            },
+            "sortOption": {
+              "data-id": "productListSortOption"
+            },
+            "ratingColor": "#a92e25",
+            "filterButton": {
+              "data-id": "productListFilterButton"
+            },
+            "productCount": 20,
+            "taxButtonText": "button",
+            "taxTitleColor": "#a92e25",
+            "addToCartLabel": "Add to cart",
+            "manyStockLabel": "manystock",
+            "isDisplayRating": true,
+            "productCardDesign": "",
+            "availabilityHeading": "availabiliity Heading",
+            "isFavoriteMainProduct": true,
+            "productListType": "COMMON",
+            "bannerShow": true,
+            "bannerBackground": "#cf4f13ff",
+            "textFontFamily": "Montserrat, sans-serif",
+            "showProductCount": true,
+            "categoryImage": true,
+            "categoryNameColor": "#1291c3ff",
+            "categroyNameStyle": "['B','I']",
+            "backgroundBorderRadius": 10,
+            "imageBorderRadius": 5,
+            "showImageBackground": true,
+            "imageBackground": "#f60703ff",
+            "isOtherAngle": true,
+            "isOtherAngleMobile": false
           },
           "isConfigDialog": true
         }
       ],
+      "expanded": false,
+      "cssStyles": {
+        ".zwe-product-card": {
+          "&:hover": {
+            "box-shadow": "0px 2px 15px 0px #dedede"
+          },
+          "&:hover .quick-view-btn": {
+            "opacity": "1 !important"
+          },
+          "&:hover .add-to-bag-btn": {
+            "opacity": "1 !important"
+          },
+          "& .productImage": {
+            "transform": "scale(1)",
+            "transition": "transform 0.3s ease-in-out"
+          },
+          "&:hover .productImage": {
+            "transform": "scale(1.1)"
+          }
+        }
+      },
       "attributes": {
         "id": "mbrtfype_2cidh"
       }
