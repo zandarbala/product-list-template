@@ -629,6 +629,9 @@
                       "fontWeight": "700",
                       "width": "100px"
                     },
+                    "attributes": {
+                      "type": "text"
+                    },
                     "textContent": "Quick View"
                   }
                 ],
@@ -1539,6 +1542,9 @@
                       "fontSize": "13px",
                       "fontWeight": "700",
                       "width": "150px"
+                    },
+                    "attributes": {
+                      "type": "text"
                     },
                     "textContent": "Quick View"
                   }

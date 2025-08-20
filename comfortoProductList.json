@@ -547,7 +547,7 @@
                 "condition": "${((multiLocationVariantStocks?.[0]?.stock == -1) || (multiLocationVariantStocks?.[0]?.stock >=1)) && !isDigitalProduct}",
                 "attributes": {
                   "class": "pl-quick-view-overlay",
-                  "data-id": "addToCartButton",
+                  "data-role":"addToCartButton",
                   "type": "overlay",
                   "isEnabled": true,
                   "action": "navigateTo",
@@ -1304,7 +1304,7 @@
                 },
                 "attributes": {
                   "class": "pl-quick-view-overlay",
-                  "data-id": "addToCartButton",
+                  "data-role":"addToCartButton",
                   "type": "overlay",
                   "isEnabled": true,
                   "action": "navigateTo",
