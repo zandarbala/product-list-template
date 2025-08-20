@@ -630,7 +630,8 @@
                   "isEnabled": true,
                   "data-id": "digitalProduct",
                   "productIndex": "${index}",
-                  "action": "navigateTo"
+                  "action": "navigateTo",
+                  "class": "productquickView"
                 },
                 "textContent": "View Details"
               },
@@ -1403,7 +1404,8 @@
                   "isEnabled": true,
                   "data-id": "digitalProduct",
                   "productIndex": "${index}",
-                  "action": "navigateTo"
+                  "action": "navigateTo",
+                  "class": "productquickView"
                 },
                 "textContent": "View Details"
               },
