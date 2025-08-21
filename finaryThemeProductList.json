@@ -673,9 +673,7 @@
                   "isEnabled": true,
                   "type": "text",
                   "class": "",
-                  "data-id": "productOutOfStock",
-                  "action": "navigateTo",
-                  "productIndex": "${index}"
+                  "data-id": "productOutOfStock"
                 },
                 "condition": "${multiLocationVariantStocks?.[0]?.stock === 0 && !(multiLocationVariantStocks?.[0]?.isPreorder && allowPreorder && !isSubscription)}",
                 "textContent": "Out of stock"
@@ -725,9 +723,7 @@
                   "isEnabled": true,
                   "type": "text",
                   "class": "",
-                  "data-id": "productNotAvailable",
-                  "action": "navigateTo",
-                  "productIndex": "${index}"
+                  "data-id": "productNotAvailable"
                 },
                 "condition": "${notAvailable}",
                 "textContent": "Menu not available on this time"
@@ -1458,9 +1454,7 @@
                   "isEnabled": true,
                   "type": "text",
                   "class": "",
-                  "data-id": "productOutOfStock",
-                  "action": "navigateTo",
-                  "productIndex": "${index}"
+                  "data-id": "productOutOfStock"
                 },
                 "condition": "${multiLocationVariantStocks?.[0]?.stock === 0 && !(multiLocationVariantStocks?.[0]?.isPreorder && allowPreorder && !isSubscription)}",
                 "textContent": "Out of stock"
@@ -1510,9 +1504,7 @@
                   "isEnabled": true,
                   "type": "text",
                   "class": "",
-                  "data-id": "productNotAvailable",
-                  "action": "navigateTo",
-                  "productIndex": "${index}"
+                  "data-id": "productNotAvailable"
                 },
                 "condition": "${notAvailable}",
                 "textContent": "Menu not available on this time"
