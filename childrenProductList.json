@@ -411,7 +411,6 @@
               {
                 "tag": "button",
                 "style": {
-                  "alignItem": "center",
                   "width": "130px",
                   "left": "35px",
                   "bottom": "10px",
@@ -519,7 +518,6 @@
                   "position": "absolute",
                   "textDecoration": "line-through",
                   "color": "grey",
-                  "alignItems": "center",
                   "fontSize": "14px"
                 },
                 "attributes": {
@@ -582,7 +580,6 @@
                 "condition": "${!isDigitalProduct && ((multiLocationVariantStocks?.[0]?.stock == -1) || (multiLocationVariantStocks?.[0]?.stock >=1))}",
                 "style": {
                   "top": "130px",
-                  "align-item": "center",
                   "width": "150px",
                   "left": "25px",
                   "height": "25px",
@@ -611,7 +608,6 @@
                 "condition": "${isDigitalProduct}",
                 "style": {
                   "top": "130px",
-                  "align-item": "center",
                   "width": "150px",
                   "left": "25px",
                   "height": "25px",
@@ -639,7 +635,6 @@
                 "tag": "button",
                 "style": {
                   "top": "120px",
-                  "align-item": "center",
                   "width": "150px",
                   "left": "25px",
                   "height": "25px",
@@ -665,7 +660,6 @@
                 "tag": "button",
                 "style": {
                   "top": "120px",
-                  "align-item": "center",
                   "width": "150px",
                   "left": "25px",
                   "height": "25px",
@@ -693,7 +687,6 @@
                 "tag": "button",
                 "style": {
                   "top": "120px",
-                  "align-item": "center",
                   "width": "150px",
                   "left": "25px",
                   "height": "25px",
@@ -1293,7 +1286,6 @@
                   "position": "absolute",
                   "textDecoration": "line-through",
                   "color": "grey",
-                  "alignItems": "center",
                   "fontSize": "14px"
                 },
                 "attributes": {
@@ -1356,7 +1348,6 @@
                 "condition": "${!isDigitalProduct && ((multiLocationVariantStocks?.[0]?.stock == -1) || (multiLocationVariantStocks?.[0]?.stock >=1))}",
                 "style": {
                   "top": "130px",
-                  "align-item": "center",
                   "width": "180px",
                   "left": "15px",
                   "height": "40px",
@@ -1385,7 +1376,6 @@
                 "condition": "${isDigitalProduct}",
                 "style": {
                   "top": "130px",
-                  "align-item": "center",
                   "width": "180px",
                   "left": "15px",
                   "height": "40px",
@@ -1413,7 +1403,6 @@
                 "tag": "button",
                 "style": {
                   "top": "120px",
-                  "align-item": "center",
                   "width": "200px",
                   "left": "15px",
                   "height": "35px",
@@ -1439,7 +1428,6 @@
                 "tag": "button",
                 "style": {
                   "top": "120px",
-                  "align-item": "center",
                   "width": "200px",
                   "left": "15px",
                   "height": "35px",
@@ -1467,7 +1455,6 @@
                 "tag": "button",
                 "style": {
                   "top": "120px",
-                  "align-item": "center",
                   "width": "200px",
                   "left": "15px",
                   "height": "35px",
