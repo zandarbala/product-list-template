@@ -681,10 +681,8 @@
                 },
                 "attributes": {
                   "id": "mbrtfype_jyd2w",
-                  "class": "zwe-product-card container",
-                  "productIndex": "${index}",
-                  "action": "navigateTo",
-                  "isEnabled": false
+                  "isEnabled": false,
+                  "data-id": "productNotAvailable"
                 },
                 "condition": "${notAvailable}",
                 "textContent": "Menu not available on this time"
@@ -692,7 +690,7 @@
             ],
             "attributes": {
               "id": "mbrtfype_jyd2w",
-              "class": "zwe-product-card container",
+              "class": "zwe-product-card",
               "action": "navigateTo",
               "productIndex": "${index}"
             }
@@ -1458,10 +1456,8 @@
                 },
                 "attributes": {
                   "id": "mbrtfype_jyd2w",
-                  "class": "zwe-product-card container",
-                  "productIndex": "${index}",
-                  "action": "navigateTo",
-                  "isEnabled": false
+                  "isEnabled": false,
+                  "data-id": "productNotAvailable"
                 },
                 "condition": "${notAvailable}",
                 "textContent": "Menu not available on this time"
@@ -1469,7 +1465,7 @@
             ],
             "attributes": {
               "id": "mbrtfype_jyd2w",
-              "class": "zwe-product-card container",
+              "class": "zwe-product-card",
               "action": "navigateTo",
               "productIndex": "${index}"
             }

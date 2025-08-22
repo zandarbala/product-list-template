@@ -818,7 +818,7 @@
             ],
             "attributes": {
               "id": "mbrtfype_jyd2w",
-              "class": "zwe-product-card container",
+              "class": "zwe-product-card",
               "action": "navigateTo",
               "productIndex": "${index}"
             }
@@ -1689,7 +1689,7 @@
             ],
             "attributes": {
               "id": "mbrtfype_jyd2w",
-              "class": "zwe-product-card container",
+              "class": "zwe-product-card",
               "action": "navigateTo",
               "productIndex": "${index}"
             }

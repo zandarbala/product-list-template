@@ -5,7 +5,7 @@
     "renderImage": "./assets/tools/home_sections.png",
     "verticalPosition": "450px",
     "horizontalPosition": "240px"
-},
+  },
   "desktopJson": {
     "domTree": {
       "tag": "div",
@@ -506,7 +506,7 @@
             ],
             "attributes": {
               "id": "mbrtfype_jyd2w",
-              "class": "zwe-product-card container",
+              "class": "zwe-product-card",
               "productIndex": "${index}"
             }
           },
