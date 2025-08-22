@@ -525,7 +525,7 @@
                   "color": "white",
                   "fontWeight": "400",
                   "border": "none",
-                  "filter": "brightness(1)",
+                  
                   "top": "0px",
                   "left": "100px",
                   "width": "130px",
@@ -1294,7 +1294,7 @@
                   "color": "white",
                   "fontWeight": "400",
                   "border": "none",
-                  "filter": "brightness(1)",
+                  
                   "top": "0px",
                   "left": "100px",
                   "width": "130px",

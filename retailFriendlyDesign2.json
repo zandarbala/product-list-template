@@ -359,7 +359,7 @@
                   "color": "white",
                   "border": "none",
                   "backgroundColor": "rgb(249 249 249 / 50%)",
-                  "filter": "brightness(1)",
+                  
                   "transition": "transform 0.3s ease-in-out, opacity 0.3s ease-in-out"
                 },
                 "attributes": {
