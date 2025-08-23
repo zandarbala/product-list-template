@@ -595,7 +595,7 @@
                     "isFreeLabel": true,
                     "discountFormat": "({discountPercentage} % OFF)"
                   },
-                  "textContent": "${discountPercentage} % OFF"
+                  "textContent": "(${discountPercentage} % OFF)"
                 },
                 {
                   "tag": "span",
@@ -1417,7 +1417,7 @@
                   "isFreeLabel": true,
                   "discountFormat": "({discountPercentage} % OFF)"
                 },
-                "textContent": "${discountPercentage} % OFF"
+                "textContent": "(${discountPercentage} % OFF)"
               },
               {
                 "tag": "span",
