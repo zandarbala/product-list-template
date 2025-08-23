@@ -16,8 +16,7 @@
           "transform": "translateY(0)",
           "zIndex": 1,
           "cursor": "pointer",
-          "backgroundColor": "f0f0f0",
-          
+          "backgroundColor": "f0f0f0"
         },
         ".addToCartButton:hover": {
           "border": "1px dotted var(--element-primary-color,black) !important",
@@ -887,8 +886,7 @@
           "transform": "translateY(0)",
           "zIndex": 1,
           "cursor": "pointer",
-          "backgroundColor": "f0f0f0",
-          
+          "backgroundColor": "f0f0f0"
         },
         ".addToCartButton:hover": {
           "border": "1px dotted var(--element-primary-color,black) !important",
